@@ -10,9 +10,12 @@ connectDB()
 // body parser
 
 app.use(express.json());
-
 app.use(express.urlencoded({extended: true}))
 
+// routes
+app.get("/",(req,res)=>{
+    res.send("welcome")
+})
 app.use("/api/todo", require("./routes/todoRoutes"))
 
 app.listen(port, ()=>{
